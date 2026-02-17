@@ -22,6 +22,6 @@ jobs:
           sudo apt-get install -y sshpass
           sshpass -p "${{ secrets.FTP_PASSWORD }}" \
             rsync -avz --delete \
-            -e "ssh -o StrictHostKeyChecking=no -p 22" \
+            -e "ssh -o StrictHostKeyChecking=no -p 50001" \
             ./public/ \
             ${{ secrets.FTP_USER }}@${{ secrets.FTP_HOST }}:/felixhelbing.de/
