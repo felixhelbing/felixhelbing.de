@@ -24,4 +24,4 @@ jobs:
             rsync -avz --delete \
             -e "ssh -o StrictHostKeyChecking=no -p 50001" \
             ./public/ \
-            ${{ secrets.FTP_USER }}@${{ secrets.FTP_HOST }}:/felixhelbing.de/
+            ${{ secrets.FTP_USER }}@${{ secrets.FTP_HOST }}:felixhelbing.de/
