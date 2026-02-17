@@ -6,6 +6,8 @@ enableRobotsTXT: true
 disableHugoGeneratorInject: true
 disableKinds: ["RSS", "sitemap", "section"]
 theme: tokyo-komae-hugo
+taxonomies:
+  tag: tags
 permalinks:
   page:
     posts: /:slug/
