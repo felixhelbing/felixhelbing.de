@@ -18,11 +18,10 @@ jobs:
 
       - run: hugo --minify
 
-      - uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USER }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./public/
-          server-dir: /felixhelbing.de/
-          protocol: sftp
+      - run: |
+          sudo apt-get install -y sshpass
+          sshpass -p "${{ secrets.FTP_PASSWORD }}" \
+            rsync -avz --delete \
+            -e "ssh -o StrictHostKeyChecking=no -p 22" \
+            ./public/ \
+            ${{ secrets.FTP_USER }}@${{ secrets.FTP_HOST }}:/felixhelbing.de/
