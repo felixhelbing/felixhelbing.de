@@ -1,0 +1,3 @@
+[submodule "themes/tokyo-komae-hugo"]
+	path = themes/tokyo-komae-hugo
+	url = https://github.com/felixhelbing/tokyo-komae-hugo.git
